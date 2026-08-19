@@ -32,5 +32,6 @@ console.log(name);
 console.log(age);
 console.log(taskBoolean);
 console.log(arrayOfNumber);
+console.log(arrayOfString);
 
 
