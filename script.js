@@ -6,7 +6,7 @@ const bookTwo ="To Kill a Mocking";
 console.log(bookTwo);
 bookOne = "Animal Farm";
 console.log(bookOne);
-// bookTwo = "Inner game of Tennis"; // result TypeError: Assignment to constant variable.
+bookTwo = "Inner game of Tennis"; // result TypeError: Assignment to constant variable.
 console.log(bookTwo); 
 
 // Task 2
