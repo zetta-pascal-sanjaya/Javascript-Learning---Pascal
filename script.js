@@ -25,6 +25,7 @@ dynamicValue = 2
 console.log(dynamicValue);
 
 const arrayOfNumber = [1, 2, 3, 4];
+const arrayOfString = ["Hello" , "World"]
 
 
 console.log(name);
