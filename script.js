@@ -1,47 +1,46 @@
 //Task 1
 
 let bookOne = "The Art of War";
-console.log(bookOne);
+
 const bookTwo ="To Kill a Mocking";
-console.log(bookTwo);
-bookOne = "Animal Farm";
-console.log(bookOne);
-bookTwo = "Inner game of Tennis"; // result TypeError: Assignment to constant variable.
-console.log(bookTwo); 
+
+if(bookOne === bookTwo){
+  console.log(true);
+} else{
+  console.log(false);
+}
+ 
 
 // Task 2
 
-let newBook = bookOne + " " +  bookTwo
-console.log(newBook);
+const book1 = {
+  title: "How to lie with statistic",
+  price: 10000
+}
+const book2 = {
+  title: "Bumi Manusia",
+  price: 20000
+}
+//a
+console.log(Math.max(book1.price, book2.price));
+//b
+const averagePrice = (book1.price + book2.price) / 2
+console.log(averagePrice);
+//c
+let bookValue = averagePrice > 500000 ? "Expensive" : "Cheap";
+console.log(bookValue)
 
-// note declaring other variables
 
-const name = "Pascal";
-const age = "21";
-const taskBoolean = true
-let dynamicValue = "Hello"
-console.log(dynamicValue);
-dynamicValue = 2
-console.log(dynamicValue);
-
-const arrayOfNumbers = [1, 2, 3, 4];
-const arrayOfStrings = ["Hello" , "World"]
-
-const person = {
-  name: "Pascal",
-  age: "21",
-  address: "Babarsari, Yogyakarta"
+// logic
+/**
+ *
+ * Write a function max_of_two(a, b) that takes in two integers, a and b, and returns the maximum of the two numbers without using any arrays or built-in functions like max().
+ *
+ */
+function max_of_two(a, b) {
+  return a > b ? a : b;
 }
 
-
-
-
-console.log(name);
-console.log(age);
-console.log(taskBoolean);
-console.log(arrayOfNumbers);
-console.log(arrayOfStrings);
-console.log(person);
-console.log(person.address);
-
+console.log(max_of_two(10, 5));
+console.log(max_of_two(45, 66));
 
