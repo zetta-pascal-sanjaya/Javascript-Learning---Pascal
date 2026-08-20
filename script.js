@@ -24,14 +24,24 @@ console.log(dynamicValue);
 dynamicValue = 2
 console.log(dynamicValue);
 
-const arrayOfNumber = [1, 2, 3, 4];
-const arrayOfString = ["Hello" , "World"]
+const arrayOfNumbers = [1, 2, 3, 4];
+const arrayOfStrings = ["Hello" , "World"]
+
+const person = {
+  name: "Pascal",
+  age: "21",
+  address: "Babarsari, Yogyakarta"
+}
+
+
 
 
 console.log(name);
 console.log(age);
 console.log(taskBoolean);
-console.log(arrayOfNumber);
-console.log(arrayOfString);
+console.log(arrayOfNumbers);
+console.log(arrayOfStrings);
+console.log(person);
+console.log(person.address);
 
 
