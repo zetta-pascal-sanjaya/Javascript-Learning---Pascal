@@ -51,26 +51,28 @@ const book2 = {
 
 function purchaseBook(book, discount, tax){
   const discountPercentage = discount/100;
+  const discountAmount = book.price * discountPercentage;
+  const priceAfterDiscount = book.price - discountAmount;
 
-  const priceAfterDiscount = book.price - (book.price * discountPercentage);
-
+  
   const taxPercentage = tax/100;
-  const priceAfterTax = priceAfterDiscount + (book.price * taxPercentage);
+  const taxAmount = priceAfterDiscount * taxPercentage
+  const priceAfterTax = priceAfterDiscount + taxAmount;
 
   const purchaseInfo = {
     bookTitle : book.title,
     bookPrice : book.price,
     isBookLegal: book.isLegalIndonesia,
-    discountInPercent: discount,
+    discountAmount: discountAmount,
     priceAfterDiscount: priceAfterDiscount,
-    taxInPercent: tax,
+    taxAmount: taxAmount,
     priceAfterTax: priceAfterTax
   }
 
   return purchaseInfo
 }
 
-console.log(purchaseBook(book2, 10,5))
+console.log(purchaseBook(book2, 10,10))
 
 
 /**
