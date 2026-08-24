@@ -25,7 +25,7 @@ const book2 = {
 }
 const book3 = {
   title: "Bumi Manusia2",
-  price: 145000,
+  price: 137000,
   isLegalIndonesia: true
 }
 // //a
@@ -56,7 +56,7 @@ const book3 = {
 
 
 
-function purchaseBook(book, discount, tax,stock,bookPurchased){
+function PurchaseBook(book, discount, tax,stock,bookPurchased){
 
   if(bookPurchased <= 0){
     console.log(`The amount of purchase cannot be ${bookPurchased} `)
@@ -68,6 +68,7 @@ function purchaseBook(book, discount, tax,stock,bookPurchased){
 
 
   for(let counter = 0; counter <  bookPurchased; counter++){
+
     // catch for when out of stock
     if(stock === 0){
       break
@@ -106,8 +107,9 @@ function purchaseBook(book, discount, tax,stock,bookPurchased){
   return purchaseInfo
 }
 
-console.log(purchaseBook(book2, 10,10,4,5))
-console.log(purchaseBook(book3, 10,10,6,5))
+// console.log(PurchaseBook(book2, 10,10,4,5))
+
+console.log(PurchaseBook(book3, 10,10,7,2))
 
 
 // /**
@@ -146,15 +148,16 @@ console.log(purchaseBook(book3, 10,10,6,5))
 Title: Unique Characters
 
 Description:
-Write a function named hasUniqueCharacters that takes a string as input and returns true if the string contains all unique characters, and false otherwise. You can assume that the string contains only lowercase alphabets (a-z).
+Write a function named HasUniqueCharacters that takes a string as input and returns true if the string contains all unique characters, and false otherwise. You can assume that the string contains only lowercase alphabets (a-z).
 
 Example:
-console.log(hasUniqueCharacters("abcdefg")); // Output: true
-console.log(hasUniqueCharacters("hello")); // Output: false
+console.log(HasUniqueCharacters("abcdefg")); // Output: true
+console.log(HasUniqueCharacters("hello")); // Output: false
 */
 
-function hasUniqueCharacters(str) {
+function HasUniqueCharacters(str) { // function pake Pascal_case
   const stringSorted = str.split("").sort().join("");
+  console.log(stringSorted)
 
   for(let i = 0; i < stringSorted.length; i++){
     
@@ -162,11 +165,12 @@ function hasUniqueCharacters(str) {
       return false
     } 
   }
-  return true
+
+  return true;
 }
 
-console.log(hasUniqueCharacters("abcdefg")); // Output: true
-console.log(hasUniqueCharacters("hello")); // Output: false
+console.log(HasUniqueCharacters("abcdefg11")); // Output: true
+console.log(HasUniqueCharacters("hello")); // Output: false
 
 
 
