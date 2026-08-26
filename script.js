@@ -1,47 +1,176 @@
-//Task 1
+// //Task 1
 
-let bookOne = "The Art of War";
-console.log(bookOne);
-const bookTwo ="To Kill a Mocking";
-console.log(bookTwo);
-bookOne = "Animal Farm";
-console.log(bookOne);
-bookTwo = "Inner game of Tennis"; // result TypeError: Assignment to constant variable.
-console.log(bookTwo); 
+// let bookOne = "The Art of War";
 
-// Task 2
+// const bookTwo ="To Kill a Mocking";
 
-let newBook = bookOne + " " +  bookTwo
-console.log(newBook);
+// if(bookOne === bookTwo){
+//   console.log(true);
+// } else{
+//   console.log(false);
+// }
+ 
 
-// note declaring other variables
+// // Task 2
 
-const name = "Pascal";
-const age = "21";
-const taskBoolean = true
-let dynamicValue = "Hello"
-console.log(dynamicValue);
-dynamicValue = 2
-console.log(dynamicValue);
+const book1 = {
+  title: "How to lie with statistic",
+  price: 10000,
+  isLegalIndonesia: false 
+}
+const book2 = {
+  title: "Bumi Manusia",
+  price: 100,
+  isLegalIndonesia: true
+}
+const book3 = {
+  title: "Bumi Manusia2",
+  price: 137000,
+  isLegalIndonesia: true
+}
+// //a
+// console.log(Math.max(book1.price, book2.price));
+// //b
+// const averagePrice = (book1.price + book2.price) / 2
+// console.log(averagePrice);
+// //c
+// let bookValue = averagePrice > 500000 ? "Expensive" : "Cheap";
+// console.log(bookValue)
 
-const arrayOfNumbers = [1, 2, 3, 4];
-const arrayOfStrings = ["Hello" , "World"]
 
-const person = {
-  name: "Pascal",
-  age: "21",
-  address: "Babarsari, Yogyakarta"
+// // logic
+// /**
+//  *
+//  * Write a function max_of_two(a, b) that takes in two integers, a and b, and returns the maximum of the two numbers without using any arrays or built-in functions like max().
+//  *
+//  */
+// function max_of_two(a, b) {
+//   return a > b ? a : b;
+// }
+
+// console.log(max_of_two(10, 5));
+// console.log(max_of_two(45, 66));
+
+
+//day 4
+
+
+
+function purchaseBook(book, discount, tax,stock,bookPurchased){
+
+  if(bookPurchased <= 0){
+    console.log(`The amount of purchase cannot be ${bookPurchased} `)
+  }
+
+
+  let amountOfBookPurchased = 0 
+
+
+
+  for(let counter = 0; counter <  bookPurchased; counter++){
+
+    // catch for when out of stock
+    if(stock === 0){
+      break
+    }
+
+    amountOfBookPurchased++
+    stock--
+  }
+
+  const isAvailableForMorePurchase = stock === 0 
+    ? `After the purchasing book is out of stock. No more book can be purchase amount of stock : ${stock}` 
+    : `Available for more purchase remaining stock: ${stock}`;
+    
+  const totalPrice = amountOfBookPurchased * book.price
+  const discountPercentage = discount/100;
+  const discountAmount = totalPrice * discountPercentage;
+  const priceAfterDiscount = totalPrice - discountAmount;
+
+  
+  const taxPercentage = tax/100;
+  const taxAmount = priceAfterDiscount * taxPercentage
+  const priceAfterTax = priceAfterDiscount + taxAmount;
+
+  const purchaseInfo = {
+    bookTitle : book.title,
+    bookPrice : book.price,
+    isBookLegal: book.isLegalIndonesia,
+    purchaseMessage : isAvailableForMorePurchase,
+    subTotal : totalPrice, 
+    discountAmount: discountAmount,
+    priceAfterDiscount: priceAfterDiscount,
+    taxAmount: taxAmount,
+    priceAfterTax: priceAfterTax
+  }
+
+  return purchaseInfo
 }
 
+// console.log(purchaseBook(book2, 10,10,4,5))
+
+console.log(purchaseBook(book3, 10,10,7,2))
 
 
+// /**
+//  *
+//  * Write a Node.js function isPrime(n) that takes an integer n as an argument and returns true if n is a prime number and false otherwise.
+//  *
+//  */
+// function isPrime(n) {
+//   if(n < 2 ){
+//     return false;
+//   }
+//   if(n % 2 === 0){
+//     return false
+//   }
+//   if(n === 2){
+//     return true;
+//   }
 
-console.log(name);
-console.log(age);
-console.log(taskBoolean);
-console.log(arrayOfNumbers);
-console.log(arrayOfStrings);
-console.log(person);
-console.log(person.address);
+//   for(let factor = 3; factor * factor <= n; factor+=2){
+//     if(n % factor === 0){
+//       return false;
+//     }
+//   }
+//   return true;
+
+// }
+
+// console.log(isPrime(10));
+// console.log(isPrime(43));
+
+
+//=== task 5 logic ===
+
+
+/*
+Title: Unique Characters
+
+Description:
+Write a function named HasUniqueCharacters that takes a string as input and returns true if the string contains all unique characters, and false otherwise. You can assume that the string contains only lowercase alphabets (a-z).
+
+Example:
+console.log(HasUniqueCharacters("abcdefg")); // Output: true
+console.log(HasUniqueCharacters("hello")); // Output: false
+*/
+
+function HasUniqueCharacters(str) { // function pake Pascal 
+  const stringSorted = str.split("").sort().join("");
+  console.log(stringSorted)
+
+  for(let i = 0; i < stringSorted.length; i++){
+    
+    if(stringSorted[i-1] === stringSorted[i]){
+      return false
+    } 
+  }
+
+  return true;
+}
+
+console.log(HasUniqueCharacters("abcdefg11")); // Output: true
+console.log(HasUniqueCharacters("hello")); // Output: false
+
 
 
