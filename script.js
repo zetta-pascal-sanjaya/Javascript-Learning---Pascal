@@ -56,7 +56,7 @@ const book3 = {
 
 
 
-function PurchaseBook(book, discount, tax,stock,bookPurchased){
+function purchaseBook(book, discount, tax,stock,bookPurchased){
 
   if(bookPurchased <= 0){
     console.log(`The amount of purchase cannot be ${bookPurchased} `)
@@ -107,9 +107,9 @@ function PurchaseBook(book, discount, tax,stock,bookPurchased){
   return purchaseInfo
 }
 
-// console.log(PurchaseBook(book2, 10,10,4,5))
+// console.log(purchaseBook(book2, 10,10,4,5))
 
-console.log(PurchaseBook(book3, 10,10,7,2))
+console.log(purchaseBook(book3, 10,10,7,2))
 
 
 // /**
@@ -155,7 +155,7 @@ console.log(HasUniqueCharacters("abcdefg")); // Output: true
 console.log(HasUniqueCharacters("hello")); // Output: false
 */
 
-function HasUniqueCharacters(str) { // function pake Pascal_case
+function HasUniqueCharacters(str) { // function pake Pascal 
   const stringSorted = str.split("").sort().join("");
   console.log(stringSorted)
 
